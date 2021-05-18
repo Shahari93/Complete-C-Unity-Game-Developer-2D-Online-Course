@@ -779,3 +779,35 @@ Received Import Request.
 Start importing Assets/Scripts/SO/StartingState.asset using Guid(cd77826efa13ff549addee3c69297000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fec3f8e875e20760e4a09d9880a99035') in 0.002455 seconds
   Import took 0.005838 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000719 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.31 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.684 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1805 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.7 MB.
+System memory in use after: 85.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2336.
+Total: 1.737900 ms (FindLiveObjects: 0.170100 ms CreateObjectMapping: 0.051500 ms MarkObjects: 1.430500 ms  DeleteObjects: 0.084900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 657.897492 seconds.
+  path: Assets/Scripts/SO/States
+  artifactKey: Guid(9c8e9dec60c6edd46a794f9d6709cf9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SO/States using Guid(9c8e9dec60c6edd46a794f9d6709cf9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d08c4eae006139c09fe31c707a35588') in 0.005956 seconds
+  Import took 0.008616 seconds .
+
