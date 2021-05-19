@@ -22,35 +22,18 @@ public class QuestGame : MonoBehaviour
     private void ManageState()
     {
         var nextStates = state.GoToNextState();
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        for (int i = 0; i < nextStates.Length; i++)
         {
-            ChangeStateAndShowText(0, nextStates);
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeStateAndShowText(1, nextStates);
-        }
-
-        if (nextStates.Length <= 2)
-        {
-            return;
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha3))
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                ChangeStateAndShowText(2, nextStates);
+                state = nextStates[i];
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Q))
+            {
+                state = startState;
             }
         }
-    }
-
-    // A method that have 2 parameters. One is the state num, and the second is the states array
-    private void ChangeStateAndShowText(int stateNum, State[] nextStates)
-    {
-        state = nextStates[stateNum];
         textComponent.text = state.GetStateStory();
     }
-
 }
