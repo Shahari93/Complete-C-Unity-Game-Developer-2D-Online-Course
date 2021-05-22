@@ -16,12 +16,6 @@ public class NumberWizard : MonoBehaviour
         max = 1000;
         min = 1;
         myGuess = 500;
-        Debug.Log("Hello there stranger, and welcome to the wizard lair");
-        Debug.Log("Pick any number between");
-        Debug.Log("The highest number is: " + max);
-        Debug.Log("The highest number is: " + min);
-        Debug.Log("Tell me if your number is higher or lower than " + myGuess);
-        Debug.Log("Up arrow = higher, Down arrow = Lower, Enter key = Correct");
         max += 1;
     }
 
