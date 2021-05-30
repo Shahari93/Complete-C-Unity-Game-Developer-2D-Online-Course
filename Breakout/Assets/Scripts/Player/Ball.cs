@@ -6,16 +6,17 @@ public class Ball : MonoBehaviour
     [SerializeField] Paddle paddle = null;
     [SerializeField] Rigidbody2D ballRB = null;
     [SerializeField] float speed = 3f;
-    [SerializeField] float xVelocity = 2f;
+    [SerializeField] float xVelocity;
     [SerializeField] float yVelocity = 15f;
     private Vector2 paddleToBallVector;
 
     private bool isGameStarted = false;
-    private int mousePressed = 0;
+    private int timesMouseWasPressed = 0;
 
     private void Start()
     {
         paddleToBallVector = transform.position - paddle.transform.position;
+        CalcRandomXVelocity();
     }
 
 
@@ -36,13 +37,18 @@ public class Ball : MonoBehaviour
 
     private void LaunchBallAtMouseClick()
     {
-        if (Input.GetMouseButtonDown(0) && mousePressed == 0)
+        if (Input.GetMouseButtonDown(0) && timesMouseWasPressed == 0)
         {
-            mousePressed++;
+            timesMouseWasPressed++;
             isGameStarted = true;
             ballRB.simulated = true;
             ballRB.velocity += new Vector2(xVelocity, yVelocity);
         }
+    }
+
+    private void CalcRandomXVelocity()
+    {
+        xVelocity = Random.Range(-5f, 8f);
     }
 }
 // TODO: Need to set simulated variable to true when launching the ball
