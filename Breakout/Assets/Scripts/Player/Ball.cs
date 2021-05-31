@@ -50,5 +50,9 @@ public class Ball : MonoBehaviour
     {
         xVelocity = Random.Range(-5f, 8f);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GetComponent<AudioSource>().Play(); // get component works only on game objects that have this class
+    }
 }
 // TODO: Need to set simulated variable to true when launching the ball
