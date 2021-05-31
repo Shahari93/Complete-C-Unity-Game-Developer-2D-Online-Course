@@ -52,7 +52,10 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GetComponent<AudioSource>().Play(); // get component works only on game objects that have this class
+        if (isGameStarted)
+        {
+            GetComponent<AudioSource>().Play(); // get component works only on game objects that have this class
+        }
     }
 }
 // TODO: Need to set simulated variable to true when launching the ball

@@ -360,6 +360,10 @@ PrefabInstance:
       propertyPath: paddle
       value: 
       objectReference: {fileID: 1262087207}
+    - target: {fileID: 648558142628971003, guid: 97a6f5b86a29b3149ba425b6feea98ca, type: 3}
+      propertyPath: bounceSource
+      value: 
+      objectReference: {fileID: 2066540313}
     - target: {fileID: 8508732578350154065, guid: 97a6f5b86a29b3149ba425b6feea98ca, type: 3}
       propertyPath: m_Name
       value: ball
@@ -2870,4 +2874,9 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7080630542682853078, guid: b79857b6996a32e439615ea2bb5e58ac, type: 3}
   m_PrefabInstance: {fileID: 1970488969}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2066540313 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4887070051088507226, guid: 97a6f5b86a29b3149ba425b6feea98ca, type: 3}
+  m_PrefabInstance: {fileID: 233553546}
   m_PrefabAsset: {fileID: 0}
