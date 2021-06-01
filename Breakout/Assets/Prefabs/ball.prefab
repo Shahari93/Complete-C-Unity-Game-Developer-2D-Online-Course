@@ -135,11 +135,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b9ff0e7775cf14bb60d8f958a39a3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddle: {fileID: 0}
-  ballRB: {fileID: 41352085}
   speed: 1250
   xVelocity: 2
   yVelocity: 12
+  paddle: {fileID: 0}
+  ballSounds:
+  - {fileID: 8300000, guid: 85f317c4c0fdf104490f6256ab69ce29, type: 3}
+  - {fileID: 8300000, guid: 42dcb597f389e6a47969f1b2b3a57dce, type: 3}
+  - {fileID: 8300000, guid: 9be6bf91319656f4b80ffd7c306c6ae6, type: 3}
+  - {fileID: 8300000, guid: 6e8942a134799684b8af3f6c2dca4f3d, type: 3}
 --- !u!82 &4887070051088507226
 AudioSource:
   m_ObjectHideFlags: 0

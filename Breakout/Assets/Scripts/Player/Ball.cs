@@ -3,18 +3,24 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [Header("Config parm")]
-    [SerializeField] Paddle paddle = null;
-    [SerializeField] Rigidbody2D ballRB = null;
     [SerializeField] float speed = 3f;
     [SerializeField] float xVelocity;
     [SerializeField] float yVelocity = 15f;
+    [SerializeField] private Paddle paddle;
     private Vector2 paddleToBallVector;
+
+    [SerializeField] AudioClip[] ballSounds; // created an array of audio clips
+    private AudioSource audioSource;
+    private Rigidbody2D ballRB;
+
 
     private bool isGameStarted = false;
     private int timesMouseWasPressed = 0;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        ballRB = GetComponent<Rigidbody2D>();
         paddleToBallVector = transform.position - paddle.transform.position;
         CalcRandomXVelocity();
     }
@@ -54,7 +60,8 @@ public class Ball : MonoBehaviour
     {
         if (isGameStarted)
         {
-            GetComponent<AudioSource>().Play(); // get component works only on game objects that have this class
+            AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length - 1)];
+            audioSource.PlayOneShot(clip); // get component works only on game objects that have this class
         }
     }
 }
