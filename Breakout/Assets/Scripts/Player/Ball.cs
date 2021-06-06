@@ -3,7 +3,6 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [Header("Config parm")]
-    [SerializeField] float speed = 3f;
     [SerializeField] float xVelocity;
     [SerializeField] float yVelocity = 15f;
     [SerializeField] private Paddle paddle;
