@@ -1,10 +1,14 @@
 using UnityEngine;
+using TMPro;
 
 public class NumberWizard : MonoBehaviour
 {
+    [SerializeField] private int max;
+    [SerializeField] private int min;
+    [SerializeField] SceneLoader sceneLoader;
+    [SerializeField] TMP_Text guessNumberText;
+    [SerializeField] TMP_Text pickNumberText;
     private int myGuess;
-    private int max;
-    private int min;
 
     void Start()
     {
@@ -13,36 +17,37 @@ public class NumberWizard : MonoBehaviour
 
     private void StartGame()
     {
-        max = 1000;
-        min = 1;
-        myGuess = 500;
+        max = Random.Range(1000, 2001);
+        min = Random.Range(1, 101);
+        CalcNewGuess();
         max += 1;
+        pickNumberText.text = "Pick a number between " + min + " and " + max;
     }
 
-    private void Update()
+    public void OnPressHigher()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        min = myGuess + 1; // because the number that the player picked is higher then what the computer guessed, we set the min number to be the guess
+        if (min >= max)
         {
-            min = myGuess; // because the number that the player picked is higher then what the computer guessed, we set the min number to be the guess
-            CalcNewGuess();
+            min = max;
+        }
+        CalcNewGuess();
+    }
 
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            max = myGuess; // because the number that the player picked is lower then what the computer guessed, we set the max number to be the guess
-            CalcNewGuess();
-        }
-        else if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Debug.Log("I guessed your number! I'm the best");
-            StartGame();
-        }
+    public void OnPressLower()
+    {
+        CalcNewGuess();
+        max = myGuess - 1; // because the number that the player picked is lower then what the computer guessed, we set the max number to be the guess
     }
 
     // after setting the max/min to what the computer guessed, we need to calc a new guess
     private void CalcNewGuess()
     {
-        myGuess = (max + min) / 2;
-        Debug.Log("Is your number higher than " + myGuess + "?");
+        myGuess = Random.Range(min, max);
+        guessNumberText.text = myGuess.ToString();
+        if (min != myGuess || max != myGuess)
+        {
+            return;
+        }
     }
 }
