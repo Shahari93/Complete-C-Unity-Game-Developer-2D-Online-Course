@@ -9,5 +9,6 @@ public class LoseTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         SceneManager.LoadScene(sceneObjectToLoad.name);
+        GameStatus.gameStatus.RestartScoreOnNextSession();
     }
 }

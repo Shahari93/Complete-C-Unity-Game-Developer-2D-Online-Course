@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockAudioClip: {fileID: 8300000, guid: 03f5f22be84d81d438023b8855337921, type: 3}
+  particlesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}

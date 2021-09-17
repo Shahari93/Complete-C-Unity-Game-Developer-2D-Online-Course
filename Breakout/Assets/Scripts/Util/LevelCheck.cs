@@ -1,23 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LevelCheck : MonoBehaviour
 {
     [SerializeField] List<Block> blocks = new List<Block>();
-    [SerializeField] Object nextScene;
+    SceneLoader sceneLoader;
 
     private void Start()
     {
         blocks.AddRange(FindObjectsOfType<Block>());
+        sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
     private void Update()
     {
         CountBlocksInLevel();
     }
-
 
     private void CountBlocksInLevel()
     {
@@ -29,7 +27,7 @@ public class LevelCheck : MonoBehaviour
             }
             if (blocks.Count == 0)
             {
-                SceneManager.LoadScene(nextScene.name);
+                sceneLoader.LoadNextScene();
             }
         }
     }
