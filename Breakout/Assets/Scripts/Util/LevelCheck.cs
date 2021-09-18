@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class LevelCheck : MonoBehaviour
 {
-    [SerializeField] List<Block> blocks = new List<Block>();
+    //[SerializeField] List<Block> blocks = new List<Block>();
     SceneLoader sceneLoader;
+    int blocks;
 
     private void Start()
     {
-        blocks.AddRange(FindObjectsOfType<Block>());
+
         sceneLoader = FindObjectOfType<SceneLoader>();
     }
 
@@ -17,18 +18,33 @@ public class LevelCheck : MonoBehaviour
         CountBlocksInLevel();
     }
 
+    public void AddBlocks()
+    {
+        blocks++;
+    }
+
+    public void RemoveBlocks()
+    {
+        blocks--;
+    }
+
+
     private void CountBlocksInLevel()
     {
-        for (int i = 0; i < blocks.Count; i++)
+        if(blocks <= 0)
         {
-            if (!blocks[i])
-            {
-                blocks.RemoveAt(i);
-            }
-            if (blocks.Count == 0)
-            {
-                sceneLoader.LoadNextScene();
-            }
+            sceneLoader.LoadNextScene();
         }
+        //for (int i = 0; i < blocks.Count; i++)
+        //{
+        //    if (!blocks[i])
+        //    {
+        //        blocks.RemoveAt(i);
+        //    }
+        //    if (blocks.Count == 0)
+        //    {
+        //        sceneLoader.LoadNextScene();
+        //    }
+        //}
     }
 }

@@ -15,7 +15,7 @@ public class GameStatus : MonoBehaviour
     {
         if (gameStatus != null)
         {
-            gameObject.SetActive(false);
+            gameObject.SetActive(false); // Because of script execution order
             Destroy(gameObject);
             return;
         }
