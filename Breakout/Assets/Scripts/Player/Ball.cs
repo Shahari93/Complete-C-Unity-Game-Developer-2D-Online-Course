@@ -5,6 +5,7 @@ public class Ball : MonoBehaviour
     [Header("Config parm")]
     [SerializeField] float xVelocity;
     [SerializeField] float yVelocity = 15f;
+    [SerializeField] private float randomFactor = 0.2f;
     [SerializeField] private Paddle paddle;
     private Vector2 paddleToBallVector;
 
@@ -57,10 +58,12 @@ public class Ball : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 velocityTweak = new Vector2(Random.Range(0,randomFactor),Random.Range(0,randomFactor));
         if (isGameStarted)
         {
             AudioClip clip = ballSounds[Random.Range(0, ballSounds.Length - 1)];
             audioSource.PlayOneShot(clip); // get component works only on game objects that have this class
+            ballRB.velocity += velocityTweak;
         }
     }
 }

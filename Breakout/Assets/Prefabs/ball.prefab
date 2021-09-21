@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xVelocity: 2
   yVelocity: 12
+  randomFactor: 0.5
   paddle: {fileID: 0}
   ballSounds:
   - {fileID: 8300000, guid: 85f317c4c0fdf104490f6256ab69ce29, type: 3}

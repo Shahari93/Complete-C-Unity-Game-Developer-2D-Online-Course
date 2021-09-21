@@ -9,6 +9,8 @@ public class GameStatus : MonoBehaviour
     [SerializeField] private int currentScore;
     [SerializeField] private TextMeshProUGUI scoreText;
 
+    [SerializeField] private bool isAutoPlayEnabled;
+
     public static GameStatus gameStatus { get; private set; }
 
     private void Awake()
@@ -44,5 +46,10 @@ public class GameStatus : MonoBehaviour
     public void RestartScoreOnNextSession()
     {
         Destroy(gameObject);
+    }
+
+    public bool IsAutoPlayEnabled()
+    {
+        return isAutoPlayEnabled;
     }
 }
