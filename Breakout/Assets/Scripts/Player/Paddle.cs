@@ -18,10 +18,10 @@ public class Paddle : MonoBehaviour
 
     void Update()
     {
-        MovePaddleWithMouse();
+        MovePaddle();
     }
 
-    private void MovePaddleWithMouse()
+    private void MovePaddle()
     {
         //float mousePosInWorldUnit = Input.mousePosition.x / Screen.width * screenWidthInWorldUnit; // in order to convert the mouse position to world point we use this method 
                                                                                                    //(getting the mouse X pos, dividing by the screen width [Can be any screen size] and we multiply by the width world unit we set
