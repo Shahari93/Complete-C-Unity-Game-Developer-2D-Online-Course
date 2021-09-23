@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8635ee72b10774b8cdef499f7e5361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phone: 1
+  phone: 0
   movementSpeed: 10
 --- !u!50 &1300068287
 Rigidbody2D:
